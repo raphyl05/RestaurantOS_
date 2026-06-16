@@ -8,8 +8,8 @@ using RestaurantOS.Infrastructure.Security;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// MVC
-builder.Services.AddControllersWithViews();
+// API
+builder.Services.AddControllers();
 
 // Base de datos
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -41,14 +41,13 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseDefaultFiles();
 app.UseStaticFiles();
 
 app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+app.MapControllers();
 
 app.Run();
