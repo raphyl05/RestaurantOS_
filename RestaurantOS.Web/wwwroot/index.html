@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RestaurantOS - Mesas</title>
     <link rel="stylesheet" href="css/mesas.css">
+    <link rel="stylesheet" href="css/productos.css">
 </head>
 <body>
 
@@ -14,11 +15,55 @@
     </header>
 
     <main>
+
+        <section id="form-mesa">
+            <h2>Crear nueva mesa</h2>
+            <form id="formulario-mesa">
+                <label for="numero">Número de mesa</label>
+                <input type="number" id="numero" name="numero" min="1" required>
+
+                <label for="capacidad">Capacidad (personas)</label>
+                <input type="number" id="capacidad" name="capacidad" min="1" required>
+
+                <button type="submit">Crear mesa</button>
+            </form>
+        </section>
+
         <div id="contenedor-mesas">
             <!-- Aquí JS va a insertar las mesas dinámicamente -->
         </div>
-    </main>
 
-    <script src="js/mesas.js"></script>
+        <section id="form-producto">
+            <h2>Agregar producto al menú</h2>
+            <form id="formulario-producto">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="descripcion">Descripción</label>
+                <input type="text" id="descripcion" name="descripcion">
+
+                <label for="precio">Precio</label>
+                <input type="number" id="precio" name="precio" min="0" step="0.01" required>
+
+                <label for="categoria">Categoría</label>
+                <select id="categoria" name="categoria">
+                    <option value="0">Entrada</option>
+                    <option value="1">Plato Principal</option>
+                    <option value="2">Bebida</option>
+                    <option value="3">Postre</option>
+                </select>
+
+                <button type="submit">Agregar producto</button>
+            </form>
+        </section>
+
+        <div id="contenedor-productos">
+            <!-- Aquí JS va a insertar los productos dinámicamente -->
+        </div>
+
+
+        <script src="js/mesas.js"></script>
+        <script src="js/productos.js"></script>
+
 </body>
 </html>

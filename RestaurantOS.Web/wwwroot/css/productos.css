@@ -1,33 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-}
-
-header {
-    background-color: #2c3e50;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-
-main {
-    padding: 20px;
-}
-
-#contenedor-mesas {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-}
-
-#form-mesa {
+﻿#form-producto {
     background: white;
     padding: 20px;
     border-radius: 8px;
@@ -35,21 +6,22 @@ main {
     max-width: 400px;
 }
 
-    #form-mesa label {
+    #form-producto label {
         display: block;
         margin-top: 12px;
         margin-bottom: 4px;
         font-weight: bold;
     }
 
-    #form-mesa input {
+    #form-producto input,
+    #form-producto select {
         width: 100%;
         padding: 8px;
         border: 1px solid #ccc;
         border-radius: 4px;
     }
 
-    #form-mesa button {
+    #form-producto button {
         margin-top: 16px;
         padding: 10px 20px;
         background-color: #2c3e50;
@@ -59,53 +31,49 @@ main {
         cursor: pointer;
     }
 
-    #form-mesa button:hover {
-        background-color: #1a252f;
-    }
+#contenedor-productos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
 
-.tarjeta-mesa {
+.tarjeta-producto {
     background: white;
     padding: 16px;
     border-radius: 8px;
     width: 220px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    opacity: 1;
 }
 
-.badge {
+    .tarjeta-producto.no-disponible {
+        opacity: 0.5;
+    }
+
+.precio {
+    font-size: 18px;
+    font-weight: bold;
+    color: #27ae60;
+    margin: 8px 0;
+}
+
+.badge-categoria {
     display: inline-block;
     padding: 4px 10px;
     border-radius: 12px;
-    font-size: 13px;
-    font-weight: bold;
+    font-size: 12px;
+    background-color: #34495e;
     color: white;
-    margin-top: 8px;
 }
 
-.estado-0 .badge {
-    background-color: #27ae60;
-}
-/* Disponible: verde */
-.estado-1 .badge {
-    background-color: #e74c3c;
-}
-/* Ocupada: rojo */
-.estado-2 .badge {
-    background-color: #f39c12;
-}
-/* Reservada: naranja */
-.estado-3 .badge {
-    background-color: #7f8c8d;
-}
-/* En Limpieza: gris */
-
-.acciones-mesa {
+.acciones-producto {
     margin-top: 12px;
     display: flex;
-    gap: 8px;
+    flex-direction: column;
+    gap: 6px;
 }
 
-    .acciones-mesa button {
-        flex: 1;
+    .acciones-producto button {
         padding: 6px 10px;
         border: none;
         border-radius: 4px;
@@ -113,12 +81,12 @@ main {
         font-size: 13px;
     }
 
-.btn-cambiar-estado {
+.btn-toggle-disponible {
     background-color: #3498db;
     color: white;
 }
 
-.btn-eliminar {
+.btn-eliminar-producto {
     background-color: #e74c3c;
     color: white;
 }
